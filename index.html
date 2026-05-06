@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Colon Hub | NMU Medical Excellence</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&family=Jost:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root { 
+            --primary: #00d2ff; --secondary: #004e92; --accent: #ff4757; 
+            --dark: #0f172a; --light-blue: #f0f9ff; --nmu-gold: #c5a059;
+            --glass: rgba(255, 255, 255, 0.85);
+        }
+
+        body { font-family: 'Jost', sans-serif; background: #fff; color: var(--dark); overflow-x: hidden; scroll-behavior: smooth; }
+        h1, h2, h3, h4 { font-family: 'Cairo', sans-serif; text-transform: uppercase; }
+
+        /* --- 1. NEW: Scroll Progress Bar --- */
+        #scroll-progress {
+            position: fixed; top: 0; left: 0; width: 0%; height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            z-index: 9999;
+        }
+        
+        /* Navbar */
+        .navbar { background: var(--glass); backdrop-filter: blur(15px); padding: 15px 0; border-bottom: 1px solid #eee; transition: 0.4s; }
+        .navbar-brand { font-weight: 900; font-size: 1.8rem; }
+
+        /* Cards & Glassmorphism */
+        .glass-card { 
+            background: white; border-radius: 25px; border: 1px solid #f0f0f0; transition: 0.4s; 
+            height: 100%; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+        }
+        .glass-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--primary); }
+        
+        /* Hero */
+        .hero-wrap { 
+            height: 100vh; display: flex; align-items: center; color: white;
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('mmm.jpeg'); 
+            background-size: cover; background-position: center; background-attachment: fixed; 
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+
+        /* --- 2. NEW: Stats Section Styling --- */
+        .stat-box { padding: 30px; border-radius: 20px; background: var(--light-blue); text-align: center; border: 1px solid #e2e8f0; }
+        .stat-number { font-size: 2.5rem; font-weight: 900; color: var(--secondary); display: block; }
+
+        /* --- 3. NEW: Research Tags --- */
+        .research-tag {
+            font-size: 0.7rem; padding: 5px 12px; border-radius: 50px;
+            background: var(--light-blue); color: var(--secondary);
+            font-weight: 700; margin-right: 5px; border: 1px solid #d1e9ff;
+        }
+
+        .video-thumb { position: relative; border-radius: 20px; overflow: hidden; border: 5px solid #fff; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: 0.3s; }
+        .play-btn {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 60px; height: 60px; background: rgba(0, 210, 255, 0.9);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 20px;
+        }
+
+        .section-tag { color: var(--primary); font-weight: 800; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 10px; }
+        .floating-survey { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
+    </style>
+</head>
+<body>
+
+    <div id="scroll-progress"></div>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">COLON<span class="text-primary">HUB</span></a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-bold">
+                    <li class="nav-item"><a class="nav-link" href="#cancer-insight">Insights</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#stats">Stats</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
+                </ul>
+                <a href="chart.html" class="btn btn-primary rounded-pill px-4 ms-lg-3 shadow-sm">VIEW DATA</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-wrap">
+        <div class="container" data-aos="fade-up">
+            <div class="col-lg-8">
+                <span class="section-tag text-white">NMU Faculty of Medicine</span>
+                <h1 class="display-1 fw-black">Advancing <br><span class="text-primary">Medical Research.</span></h1>
+                <p class="lead mb-5 fs-4 opacity-75">Innovative approaches to Colorectal health, powered by New Mansoura University students.</p>
+                <div class="d-flex gap-3">
+                    <a href="#research" class="btn btn-primary btn-lg rounded-pill px-5 shadow">Explore Research</a>
+                    <a href="#donate" class="btn btn-outline-light btn-lg rounded-pill px-5">Support 57357</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- NEW: Stats Section -->
+    <section id="stats" class="py-5 bg-white">
+        <div class="container py-4">
+            <div class="row g-4">
+                <div class="col-md-3" data-aos="zoom-in">
+                    <div class="stat-box">
+                        <span class="stat-number">20+</span>
+                        <span class="small fw-bold text-uppercase opacity-50">Data Charts</span>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-box">
+                        <span class="stat-number">100%</span>
+                        <span class="small fw-bold text-uppercase opacity-50">Student Managed</span>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-box">
+                        <span class="stat-number">57357</span>
+                        <span class="small fw-bold text-uppercase opacity-50">Partnership</span>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-box" style="border-color: var(--primary);">
+                        <span class="stat-number text-primary">2026</span>
+                        <span class="small fw-bold text-uppercase opacity-50">Projected Goal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Insight Section -->
+    <section id="cancer-insight" class="py-5" style="background: linear-gradient(180deg, #fff 0%, var(--light-blue) 100%);">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <span class="section-tag">Clinical Overview</span>
+                    <h2 class="display-5 fw-black mb-4">The Power of <span class="text-primary">Early Screening</span></h2>
+                    <p class="lead text-dark fw-normal">Colorectal cancer is a silent threat that can be neutralized. Our mission is to bridge the gap between academic research and community awareness.</p>
+                    
+                    <ul class="list-unstyled mt-4">
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-primary me-3"></i> Comprehensive DNA Analysis Support</li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-primary me-3"></i> Advanced Polyp Detection Insights</li>
+                        <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-primary me-3"></i> Patient Nutrition Guidelines</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <img src="https://images.pexels.com/photos/7088483/pexels-photo-7088483.jpeg?auto=compress&cs=tinysrgb&w=800" class="img-fluid rounded-5 shadow-lg" alt="Research">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Research Papers Section -->
+    <section id="research" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Academic Excellence</span>
+                <h2 class="display-4 fw-black">Latest Research Papers</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up">
+                    <div class="glass-card p-4">
+                        <div class="mb-3">
+                            <span class="research-tag">Genetics</span>
+                            <span class="research-tag">2024</span>
+                        </div>
+                        <h5 class="fw-bold">Biomarkers in CRC</h5>
+                        <p class="small text-muted">A study on the early detection of oncogenic markers in Egyptian patients.</p>
+                        <hr>
+                        <a href="#" class="btn btn-link text-primary p-0 fw-bold">Read Full Paper <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-card p-4">
+                        <div class="mb-3">
+                            <span class="research-tag">Nutrition</span>
+                            <span class="research-tag">2023</span>
+                        </div>
+                        <h5 class="fw-bold">Fiber-Rich Diets</h5>
+                        <p class="small text-muted">Analyzing the correlation between Mediterranean diet and colon health.</p>
+                        <hr>
+                        <a href="#" class="btn btn-link text-primary p-0 fw-bold">Read Full Paper <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass-card p-4">
+                        <div class="mb-3">
+                            <span class="research-tag">AI</span>
+                            <span class="research-tag">New</span>
+                        </div>
+                        <h5 class="fw-bold">AI in Colonoscopy</h5>
+                        <p class="small text-muted">How machine learning is improving detection rates during procedures.</p>
+                        <hr>
+                        <a href="#" class="btn btn-link text-primary p-0 fw-bold">Read Full Paper <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="videos" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Educational Media</span>
+                <h2 class="display-4 fw-black">Medical Video Library</h2>
+            </div>
+            <div class="row g-4 text-center">
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in">
+                    <a href="https://www.youtube.com/watch?v=y2Bg-spJAG0" target="_blank" class="text-decoration-none">
+                        <div class="video-thumb shadow-sm">
+                            <img src="https://img.youtube.com/vi/y2Bg-spJAG0/maxresdefault.jpg" class="img-fluid rounded-4" alt="Video 1">
+                            <div class="play-btn"><i class="fas fa-play"></i></div>
+                        </div>
+                        <p class="small fw-bold mt-3 text-secondary text-uppercase">Understanding Colorectal Cancer</p>
+                    </a>
+                </div>
+                <!-- ... باقي الفيديوهات ... -->
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <a href="https://www.youtube.com/watch?v=ZA4xFrtCeZg" target="_blank" class="text-decoration-none">
+                        <div class="video-thumb shadow-sm">
+                            <img src="https://img.youtube.com/vi/ZA4xFrtCeZg/maxresdefault.jpg" class="img-fluid rounded-4" alt="Video 2">
+                            <div class="play-btn"><i class="fas fa-play"></i></div>
+                        </div>
+                        <p class="small fw-bold mt-3 text-secondary text-uppercase">IBD: Crohn's vs Ulcerative Colitis</p>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="https://www.youtube.com/watch?v=H5zin8jKeT0" target="_blank" class="text-decoration-none">
+                        <div class="video-thumb shadow-sm">
+                            <img src="https://img.youtube.com/vi/H5zin8jKeT0/maxresdefault.jpg" class="img-fluid rounded-4" alt="Video 3">
+                            <div class="play-btn"><i class="fas fa-play"></i></div>
+                        </div>
+                        <p class="small fw-bold mt-3 text-secondary text-uppercase">Who is at risk? (TED-Ed)</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate" class="py-5">
+        <div class="container">
+            <div class="bg-dark p-5 rounded-5 text-white shadow-lg text-center" data-aos="flip-up" style="background: linear-gradient(45deg, #0f172a, #1e293b) !important;">
+                <h2 class="display-4 fw-black mb-4">Together for <span class="text-primary">Hospital 57357</span></h2>
+                <p class="mb-5 opacity-75">Your support helps provide world-class treatment for children battling cancer.</p>
+                <div class="d-flex justify-content-center gap-4 flex-wrap align-items-center">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://57357.org" class="bg-white p-2 rounded-3" alt="QR">
+                    <a href="https://57357.org" target="_blank" class="btn btn-primary btn-lg rounded-pill px-5 fs-4 fw-bold shadow-lg">DONATE NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 text-center bg-white border-top">
+        <h3 class="fw-black mb-0">COLON<span class="text-primary">HUB</span></h3>
+        <p class="small fw-bold text-uppercase mt-4 opacity-50">Designed & Developed by <span class="text-primary">Team N.M</span> | NMU 2026</p>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="floating-survey">
+        <a href="about.html" class="btn btn-primary btn-lg rounded-circle shadow-lg p-3 d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+            <i class="fa-solid fa-chart-pie fa-2x"></i>
+        </a>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Scroll Progress Script
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("scroll-progress").style.width = scrolled + "%";
+        };
+    </script>
+</body>
+</html>
